@@ -31,6 +31,7 @@ namespace PortalRandkowy.API
             //services.AddDbContext<DataContext>
             
             services.AddControllers();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +42,8 @@ namespace PortalRandkowy.API
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();a
+            app.UseCors( x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
             app.UseRouting();
 
